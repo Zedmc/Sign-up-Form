@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/assets/fonts/Roboto-Bold.ttf);
+  src: url(/assets/fonts/Roboto-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-roboto);
+  white-space: initial;
+}
+
+:root {
+  --clr-red: hsl(4, 100%, 67%);
+  --clr-orange: hsl(16, 91%, 60%);
+  --clr-dark-gray: hsl(234, 29%, 20%);
+  --clr-charcoal: hsl(235, 18%, 26%);
+  --clr-gray: hsl(231, 7%, 60%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-gradient: linear-gradient(
+    to right,
+    var(--clr-red) 70%,
+    var(--clr-orange)
+  );
+
+  --ff-roboto: "Roboto", sans-serif;
+  --fs-regular: 1rem;
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+body {
+  background: var(--clr-charcoal);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  font-size: var(--fs-regular);
+  font-family: var(--ff-roboto);
+}
+
+#container {
+  background: var(--clr-white);
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 50rem;
+
+  display: flex;
+  padding: 1.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.75rem;
+
+  margin-right: 1rem;
+  padding: 2rem;
+  --width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  /* margin-bottom: 1.5rem; */
+}
+
+.description {
+  font-size: 0.85rem;
+}
+
+.list {
+  /* margin: 1.75rem auto; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list li {
+  font-size: 0.85rem;
+  list-style: none;
+}
+
+.list li::before {
+  content: url(/assets/images/icon-list.svg);
+  /* font-size: 0.1rem; */
+  vertical-align: middle;
+  margin-right: 0.75rem;
+}
+
+.input-container #email-label {
+  font-size: 0.65rem;
+  font-weight: var(--fw-700);
+}
+
+.input-container #email-error {
+  font-size: 0.65rem;
+  font-weight: var(--fw-700);
+  color: var(--clr-red);
+}
+
+.input-container #email-field {
+  width: var(--width);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.input-container #email-field:focus {
+  outline: 1px solid black;
+}
+
+/* Error Display on Input */
+.error-display {
+  outline: 1.5px solid var(--clr-red);
+  background: hsla(4, 100%, 67%, 0.234);
+  /* color: var(--clr-red); */
+  /* background-image: url(/assets/images/icon-list.svg);
+  background-repeat: no-repeat;
+  background-position: top 50% left 95%; */
+}
+
+.form-section #button {
+  width: var(--width);
+  background-color: var(--clr-dark-gray);
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  margin-top: 1.25rem;
+  cursor: pointer;
+}
+
+.form-section #button:hover,
+#success-button:hover {
+  background: var(--clr-gradient);
+  box-shadow: 0 10px 25px var(--clr-red);
+}
+
+.trial {
+  display: flex;
+  justify-content: space-between;
+  width: var(--width);
+}
+
+img {
+  width: 22rem;
+  /* margin-left: 2rem; */
+}
+
+/* Mobile Version */
+
+@media (max-width: 786px) {
+
+  body {
+    height: 200vh;
+  }
+  #container {
+    background: var(--clr-white);
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+
+
+  /* #success-container {
+
+  } */
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Success Styling */
+#success-container {
+  background: var(--clr-white);
+  width: 26rem;
+  padding: 2.5rem;
+  border-radius: 2rem;
+
+  display: grid;
+  gap: 1.75rem;
+}
+
+.success-icon {
+  width: 3.5rem;
+}
+
+.success-title {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.success-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+#success-button {
+  width: var(--width);
+  background-color: var(--clr-dark-gray);
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+#email-entry {
+  font-weight: var(--fw-700);
+}
+
+.switch {
+  display: none !important;
+}
